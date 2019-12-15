@@ -1,0 +1,7 @@
+.project
+.classpath
+*.iml
+*.pyc
+.idea
+/bin/
+/target
