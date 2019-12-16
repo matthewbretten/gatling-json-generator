@@ -12,9 +12,12 @@ class TestSimulation extends Simulation {
   private val casualCustomerScenario = scenario(scenarioName = "Casual customer")
     .feed(casualCustomer)
     .exec(PostNewBasket.post)
-    .exec { session=>
-      println(session("basket").as[String])
-      session
+    /* Example how to print Gatling session variables for debugging:
+    *
+    *.exec { session=>
+    *  println(session("basket").as[String])
+    *  session
+    */
     }
 
   private val bigSpenderScenario = scenario(scenarioName = "Big spender")
@@ -24,9 +27,12 @@ class TestSimulation extends Simulation {
   setUp(
     casualCustomerScenario.inject(
       constantUsersPerSec(1) during (1 second)
-    //  rampUsersPerSec(0) to 20 during (30 minutes),
-    //  constantUsersPerSec(20) during (3 hours),
-    //  rampUsersPerSec(20) to 0 during (30 minutes)
+      /* Example load scenario with ramp up/down:
+      *
+      * rampUsersPerSec(0) to 20 during (30 minutes),
+      * constantUsersPerSec(20) during (3 hours),
+      * rampUsersPerSec(20) to 0 during (30 minutes)
+      */
     ),
     bigSpenderScenario.inject(
       constantUsersPerSec(1) during (1 second)
