@@ -32,9 +32,14 @@ nested values from a list)
 * Picking a random number between two values (this is default functionality in Scala 
 2.13 but Gatling currently only supports 2.12 so had to back port this)
 
+Behaviour
+---------------
+When this code is run, it will attempt to perform POST HTTP requests to http://localhost:5000 (as I was running a local Python Flask application to test receiving the requests). 
+As part of the POST request, it will include the generated JSON as part of the request body. 
+
 Sample data
 ---------------
-It will generate data that looks like this:
+This code will generate JSON data that looks like this as part of each request:
 ```json
 {
   "customer" : {
