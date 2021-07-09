@@ -1,6 +1,12 @@
 Gatling JSON Generator
 ===========================
 
+
+Update (9th July 2021) - I have recently created a better approach using Java projects, you
+can find and read about this here:
+https://bestofthetest.blogspot.com/2021/07/gatling-and-test-data-generator-pattern.html?m=1
+https://github.com/matthewbretten/gatling-example-datamodel-pattern
+
 This suite is an example to dynamically generate large amounts of JSON documents and still
 utilising Gatling's scenario features to control different volumes of certain data.
 
